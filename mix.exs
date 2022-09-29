@@ -1,4 +1,4 @@
-defmodule UrlParser.MixProject do
+defmodule URLParser.MixProject do
   use Mix.Project
 
   def project do
@@ -7,7 +7,14 @@ defmodule UrlParser.MixProject do
       version: "0.1.0",
       elixir: "~> 1.12",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      test_coverage: [tool: ExCoveralls],
+      preferred_cli_env: [
+        coveralls: :test,
+        "coveralls.detail": :test,
+        "coveralls.post": :test,
+        "coveralls.html": :test
+      ]
     ]
   end
 
@@ -21,8 +28,11 @@ defmodule UrlParser.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      # {:dep_from_hexpm, "~> 0.3.0"},
-      # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
+      {:httpoison, "~> 1.8"},
+      {:floki, "~> 0.32.0"},
+      {:credo, "~> 1.6", only: [:dev, :test], runtime: false},
+      {:excoveralls, "~> 0.14.0", only: [:test]},
+      {:mox, "~> 1.0"}
     ]
   end
 end

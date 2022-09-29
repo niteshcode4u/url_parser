@@ -1,6 +1,8 @@
-# UrlParser
+# URLParser
 
-**TODO: Add description**
+An OTP application to fetch data from given URL, Parse received data, and then save parsed data to `%{assets: [], links: []}` format.
+
+Using this application you can easily perform URL fetch operation when response structure for that page is in HTML.
 
 ## Installation
 
@@ -18,4 +20,3 @@ end
 Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
 and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
 be found at [https://hexdocs.pm/url_parser](https://hexdocs.pm/url_parser).
-
