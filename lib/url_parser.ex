@@ -2,12 +2,13 @@ defmodule URLParser do
   @moduledoc """
   Module to fetch data from given url, parse it, and format into links & assets
 
-  See function docs `h URLParser.fetch` to understand working flow.
+  See function docs `h URLParser.fetch/1` to understand working flow.
   """
 
   alias URLParser.Behaviours.Http, as: HttpAdapter
   alias URLParser.Utils
 
+  @spec fetch(binary | URI.t()) :: {:error, any} | {:ok, %{assets: list, links: list}}
   @doc """
   Fetch data based on provided URL and return an object with keys {`assets` & `links`}.
 
